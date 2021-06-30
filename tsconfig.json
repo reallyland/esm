@@ -1,0 +1,10 @@
+{
+  "extends": "@reallyland/tsconfig/browser",
+  "compilerOptions": {
+    "declarationDir": "dist",
+    "outDir": "dist",
+    "rootDir": "src",
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist"]
+}
