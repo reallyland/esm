@@ -59,9 +59,16 @@
     "postinstall": "npm dedupe",
     "check": "package-check",
     "prepublishOnly": "npm run clean && npm run build",
-    "clean": "shx rm -rf .*cache *.log coverage/ dist/ logs/"
+    "clean": "shx rm -rf .*cache *.log coverage/ dist/ logs/",
+    "prepare": "npm x -- husky@latest install"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^12.1.4",
     "@reallyland/tsconfig": "^3.0.2",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
