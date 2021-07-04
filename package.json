@@ -28,13 +28,13 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./dist": {
-      "import": "./dist",
-      "default": "./dist"
-    },
     "./dist/*": {
       "import": "./dist/*",
       "default": "./dist/*"
+    },
+    "./clone-deep": {
+      "import": "./dist/clone-deep.js",
+      "default": "./dist/clone-deep.js"
     },
     "./parse5": {
       "import": "./dist/parse5.js",
