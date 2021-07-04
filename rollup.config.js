@@ -1,7 +1,7 @@
 import { readdirSync } from 'fs';
 
 import { terser } from 'rollup-plugin-terser';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
@@ -10,9 +10,9 @@ function pluginFn() {
     nodeResolve(),
     commonjs(),
     typescript({
+      declarationDir: '.',
       include: ['src/*.ts'],
       tsconfig: './tsconfig.json',
-      useTsconfigDeclarationDir: true,
     }),
     terser({
       compress: true,
@@ -32,26 +32,16 @@ function pluginFn() {
 const src = './src';
 export const allLibs = readdirSync(src).filter(n => /\.ts$/i.test(n));
 
-export const cjsBuild = (n) => {
-  return {
+const multiBuild = allLibs.reduce((p, n) => {
+  const esm = {
     input: `${src}/${n}`,
+    plugins: pluginFn(),
+    treeshake: { moduleSideEffects: false },
     output: {
       file: `dist/${n.replace(/ts$/i, 'js')}`,
       format: 'cjs',
       exports: 'named',
-    },
-    plugins: pluginFn(),
-    treeshake: { moduleSideEffects: false },
-  };
-};
-
-const multiBuild = allLibs.reduce((p, n) => {
-  const cjs = cjsBuild(n);
-  const esm = {
-    ...cjs,
-    output: {
-      ...cjs.output,
-      // file: `dist/lib/${n.replace(/ts$/i, 'js')}`,
+      sourcemap: true,
       format: 'esm',
     },
   };

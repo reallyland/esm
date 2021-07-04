@@ -38,14 +38,16 @@ parse('<h1>Hello, World!</h1>');
 
 ## API Reference
 
+1. [clone-deep]
 1. [parse5]
-1. [prismjs]
+2. [prismjs]
 
 ## License
 
 [MIT License](http://motss.mit-license.org/) © Rong Sen Ng
 
 <!-- References -->
+[clone-deep]: https://www.npmjs.com/package/lodash.clonedeep
 [parse5]: https://github.com/inikulin/parse5
 [prismjs]: https://github.com/PrismJS/prism
 
@@ -70,7 +72,7 @@ parse('<h1>Hello, World!</h1>');
 [follow-me-badge]: https://flat.badgen.net/twitter/follow/igarshmyb?icon=twitter
 
 [version-badge]: https://flat.badgen.net/npm/v/@reallyland/esm?icon=npm
-[mit-license-badge]: https://flat.badgen.net/npm/license/reallyaland/esm
+[mit-license-badge]: https://flat.badgen.net/npm/license/@reallyland/esm
 
 [downloads-badge]: https://flat.badgen.net/npm/dm/@reallyland/esm
 [total-downloads-badge]: https://flat.badgen.net/npm/dt/@reallyland/esm?label=total%20downloads

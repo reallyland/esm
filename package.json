@@ -22,6 +22,7 @@
     "email": "wes.ngrongsen@gmail.com",
     "url": "https://github.com/motss"
   },
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -72,9 +73,12 @@
     "@reallyland/tsconfig": "^3.0.2",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
     "@skypack/package-check": "^0.2.2",
+    "@types/lodash-es": "^4.17.4",
     "@types/parse5": "^6.0.0",
     "@types/prismjs": "^1.16.5",
+    "lodash-es": "^4.17.21",
     "parse5": "^6.0.1",
     "prismjs": "^1.24.0",
     "rollup": "^2.52.4",
