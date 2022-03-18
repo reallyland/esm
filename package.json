@@ -56,12 +56,12 @@
     "!dist/test*/**/*.*"
   ],
   "scripts": {
-    "build": "npm run clean && rollup --config ./rollup.config.js",
+    "build": "rollup --config ./rollup.config.js",
     "check": "package-check",
     "clean": "rm -rf .*cache *.log .swc/ coverage/ dist/ logs/",
     "postinstall": "sh postinstall.sh",
     "lint-commit": "npm x -y -- commitlint@latest --edit",
-    "pre-commit": "package-check && npm x -y nano-staged@latest && tsc --noEmit",
+    "pre-commit": "package-check && tsc --noEmit",
     "prepublishOnly": "npm run clean && npm run build"
   },
   "simple-git-hooks": {
@@ -87,8 +87,7 @@
     "parse5": "^6.0.1",
     "prismjs": "^1.24.0",
     "rollup": "^2.52.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rollup-plugin-terser": "^7.0.2"
   },
   "publishConfig": {
     "access": "public"
