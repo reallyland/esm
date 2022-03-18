@@ -10,6 +10,11 @@ if (CI !== 'true') {
     name: moduleName,
   } = JSON.parse(await fs.readFile('./package.json', { encoding: 'utf-8' }));
 
+  console.debug({
+    moduleName,
+    INIT_CWD,
+  });
+
   if (
     [
       moduleName,
