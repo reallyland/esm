@@ -1,6 +1,6 @@
 {
   "name": "@reallyland/esm",
-  "version": "0.0.4-rc.4",
+  "version": "0.0.4-rc.5",
   "description": "A collection of node modules re-exported as ES Modules",
   "keywords": [
     "esm",
