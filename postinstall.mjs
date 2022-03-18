@@ -10,19 +10,12 @@ if (CI !== 'true') {
     name: moduleName,
   } = JSON.parse(await fs.readFile('./package.json', { encoding: 'utf-8' }));
 
-  console.debug({
-    moduleName,
-    INIT_CWD,
-  });
-
   if (
-    [
+    ![
       moduleName,
       moduleName.split('/', 2)[1]
-    ].some(n => (
-      !INIT_CWD.endsWith(`node_modules/${n}`) &&
-      INIT_CWD.endsWith(n)
-    ))
+    ].some(n => INIT_CWD.endsWith(`node_modules/${n}`)) &&
+    INIT_CWD.endsWith(n)
   ) {
     /**
      * NOTE: To skip running `simple-git-hooks` in CI environment.
