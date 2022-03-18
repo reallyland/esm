@@ -10,6 +10,7 @@ function pluginFn() {
     nodeResolve(),
     commonjs(),
     typescript({
+      declarationDir: '.',
       tsconfig: './tsconfig.json',
     }),
     terser({

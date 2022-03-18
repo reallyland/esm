@@ -56,13 +56,13 @@
     "!dist/test*/**/*.*"
   ],
   "scripts": {
-    "build": "rollup --config ./rollup.config.js",
+    "build": "npm run clean && rollup --config ./rollup.config.js",
     "check": "package-check",
     "clean": "rm -rf .*cache *.log .swc/ coverage/ dist/ logs/",
     "postinstall": "sh postinstall.sh",
     "lint-commit": "npm x -y -- commitlint@latest --edit",
     "pre-commit": "package-check && tsc --noEmit",
-    "prepublishOnly": "npm run clean && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "simple-git-hooks": {
     "pre-commit": "npm run pre-commit",
