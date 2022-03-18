@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs';
+import { readdirSync } from 'node:fs';
 
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
@@ -11,7 +11,6 @@ function pluginFn() {
     commonjs(),
     typescript({
       declarationDir: '.',
-      include: ['src/*.ts'],
       tsconfig: './tsconfig.json',
     }),
     terser({
