@@ -59,7 +59,7 @@
   "scripts": {
     "build": "npm run clean && rollup --config ./rollup.config.js",
     "clean": "sh $(dirname '$0')/node_modules/@reallyland/tools/cleanup.sh",
-    "postinstall": "pwd && echo $0 && echo $(dirname '$0') && ls -halt $(pwd)/node_modules/@reallyland/tools && sh $(dirname '$0')/node_modules/@reallyland/tools/postinstall.sh",
+    "postinstall": "pwd && echo $0 && echo $(dirname '$0') && echo $(npm root) && ls -halt $(pwd)/node_modules/@reallyland/tools && sh $(dirname '$0')/node_modules/@reallyland/tools/postinstall.sh",
     "lint-commit": "sh $(dirname '$0')/node_modules/@reallyland/tools/lint-commit.sh",
     "pre-commit": "package-check && tsc --noEmit",
     "prepublishOnly": "npm run build"
