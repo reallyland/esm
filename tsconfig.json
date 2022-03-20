@@ -1,11 +1,12 @@
 {
-  "extends": "@reallyland/tsconfig/browser/tsconfig.json",
+  "extends": "@reallyland/tools/tsconfig.json",
   "compilerOptions": {
-    "declarationDir": "dist",
     "importHelpers": true,
-    "outDir": "dist",
-    "rootDir": "src",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "rootDir": "src"
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["dist"]
+  "include": ["src/**/*.ts"]
 }
