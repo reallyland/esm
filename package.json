@@ -69,7 +69,7 @@
     "commit-msg": "npm run lint-commit"
   },
   "devDependencies": {
-    "@reallyland/tools": "^0.0.2",
+    "@reallyland/tools": "^0.0.3",
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
