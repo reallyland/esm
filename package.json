@@ -1,6 +1,6 @@
 {
   "name": "@reallyland/esm",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "A collection of node modules re-exported as ES Modules",
   "keywords": [
     "esm",
@@ -58,9 +58,9 @@
   ],
   "scripts": {
     "build": "npm run clean && rollup --config ./rollup.config.js",
-    "clean": "sh ./node_modules/@reallyland/tools/cleanup.sh",
-    "postinstall": "sh ./node_modules/@reallyland/tools/postinstall.sh",
-    "lint-commit": "sh ./node_modules/@reallyland/tools/lint-commit.sh",
+    "clean": "sh $(npm root)/@reallyland/tools/cleanup.sh",
+    "postinstall": "FILE=\"$(npm root)/@reallyland/tools/postinstall.sh\"; if [ -f \"$FILE\" ]; then sh \"$FILE\"; fi",
+    "lint-commit": "sh $(npm root)/@reallyland/tools/lint-commit.sh",
     "pre-commit": "package-check && tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
@@ -69,7 +69,7 @@
     "commit-msg": "npm run lint-commit"
   },
   "devDependencies": {
-    "@reallyland/tools": "^0.0.2",
+    "@reallyland/tools": "^0.0.3",
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
