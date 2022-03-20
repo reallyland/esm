@@ -1,8 +1,10 @@
 {
   "extends": "@reallyland/tools/browser/tsconfig.json",
   "compilerOptions": {
-    "importHelpers": true,
+    "declarationDir": "dist",
+    "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist", "node_modules"]
 }
